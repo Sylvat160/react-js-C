@@ -6,12 +6,12 @@ const Login = () => {
         <h2>Login</h2>
     <form>
         <div className="user-box group">
-            <input type="text"  required/>
-            <label>Username</label>
+            <input type="text" name="login"  required/>
+            <label htmlFor='login'>Username</label>
         </div>
         <div className="user-box group">
-            <input type="password" name="" required=""/>
-            <label>Password</label>
+            <input type="password" name="password" required=""/>
+            <label htmlFor='password'>Password</label>
         </div>
         <a href="#">
             <span></span>
