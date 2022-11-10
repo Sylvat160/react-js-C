@@ -165,3 +165,10 @@ body {
     bottom: 100%;
   }
 }
+
+.btn-form {
+  background: transparent;
+  color:white;
+  border: none;
+  font-size: 16px; 
+}
