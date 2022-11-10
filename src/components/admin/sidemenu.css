@@ -53,3 +53,8 @@ div.content {
     float: none;
   }
 }
+
+.dflex {
+  display: flex;
+  list-style: none;
+}

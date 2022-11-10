@@ -18,7 +18,7 @@ const AdminRouter = () => {
         </Route>
         <Route path="cocktail">
           <Route index element={<Cocktail />} />
-          <Route path="add" element={<CocktailEdit />} />
+          <Route path="edit" element={<CocktailEdit />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Route>
