@@ -1,13 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const User = () => {
-     const marcel = () => {
-        console.log('click')
+    let navigate = useNavigate();
+     const marcel = (userId) => {
+        console.log('click');
+        navigate(`./edit/${userId}`);
+
      }
     return (
         <div className='User'>
             User list
-            <button onclick={marcel}> user 4 </button>
+            <button onClick={()=> marcel(4)}> user 4 </button>
         </div>
     );
 };
