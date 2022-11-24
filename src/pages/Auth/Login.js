@@ -24,7 +24,7 @@ const Login = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(credentials);
-        axios.post('http://localhost:8888/auth/login', credentials)
+        accountService.Login(credentials)
             .then(res => { 
                 accountService.saveToken(res.data.access_token);
                 navigate('/admin', { replace: true });

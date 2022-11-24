@@ -1,8 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { accountService } from '@/_services/account.service';
+import { useNavigate } from 'react-router-dom';
 import './header.css';
 
 const Header = () => {
+
+    let navigate = useNavigate();
+
+  const logout = () => {
+    accountService.logout();
+    navigate('/', { replace: true });
+  }
+
     return (
       <div className="AHeader">
         <div class="header">
@@ -15,6 +25,7 @@ const Header = () => {
             </a>
             <a href="#contact">Contact</a>
             <a href="#about">Service</a>
+            <button onClick={logout}> Logout </button>
           </div>
         </div>
       </div>
