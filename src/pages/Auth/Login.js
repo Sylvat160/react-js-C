@@ -1,6 +1,7 @@
 import React , { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { accountService } from '@/_services/account.service';
 
 const Login = () => {
     // const [login, setLogin] = useState('');
@@ -25,6 +26,7 @@ const Login = () => {
         console.log(credentials);
         axios.post('http://localhost:8888/auth/login', credentials)
             .then(res => { 
+                accountService.saveToken(res.data.access_token);
                 navigate('/admin', { replace: true });
             })
             .catch(err => { console.log(err)})
