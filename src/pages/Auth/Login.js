@@ -1,9 +1,13 @@
-import React from 'react';
-import { useState } from 'react';
+import React , { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
     // const [login, setLogin] = useState('');
     // const [password, setPassword] = useState('');
+
+    let navigate = useNavigate();
+
 
     const onChange = (e) => {
         setCredentials({
@@ -13,19 +17,24 @@ const Login = () => {
     }
 
     const [credentials, setCredentials] = useState({
-        login : '',
-        password : ''
+        email : 'admin@admin.com',
+        password : '111111111'
     });
     const onSubmit = (e) => {
         e.preventDefault();
         console.log(credentials);
+        axios.post('http://localhost:8888/auth/login', credentials)
+            .then(res => { 
+                navigate('/admin', { replace: true });
+            })
+            .catch(err => { console.log(err)})
     }
     return (
         <div className="login-box">
         <h2>Login  </h2>
     <form onSubmit={onSubmit}>
         <div className="user-box group">
-            <input type="text" name="login" value={credentials.login} onChange={onChange} required/>
+            <input type="text" name="email" value={credentials.email} onChange={onChange} required/>
             <label htmlFor='login'>Username</label>
         </div>
         <div className="user-box group">
