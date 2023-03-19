@@ -68,3 +68,40 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+```js
+import { useState, useEffect } from 'react';
+import './App.css';
+
+// Custom component using props 
+const Person = (props) => {
+  return (
+    <>
+      <h1>Name : {props.name} </h1>
+      <h1> age : {props.age} </h1>
+      <h1> Number : {props.number} </h1>  
+    </>
+  )
+}
+
+const App = () => {
+
+  const [counter , setCounter] = useState("0")
+
+  useEffect(() => {
+    setCounter(100)
+  }, [])
+
+  return (
+    <div className="App">
+      {/* <Person name={'John'} age={32} number={123123} /> */}
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}> - </button>
+      <h1> { counter } </h1>
+      <button onClick={() => setCounter((prevCount) => prevCount + 1)}> + </button>
+    </div>
+  );
+}
+
+export default App;
+```
