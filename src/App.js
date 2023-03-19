@@ -1,11 +1,11 @@
 import './App.css';
 
-const Person = () => {
+const Person = (props) => {
   return (
     <>
-      <h1>Name : Sylva</h1>
-      <h1> age : 23 </h1>
-      <h1> Number : 329034 </h1>  
+      <h1>Name : {props.name} </h1>
+      <h1> age : {props.age} </h1>
+      <h1> Number : {props.number} </h1>  
     </>
   )
 }
@@ -16,9 +16,7 @@ const App = () => {
   const isNameShowing = false 
   return (
     <div className="App">
-      <Person />
-      <Person />
-      <Person />
+      <Person name={'John'} age={32} number={123123} />
     </div>
   );
 }
