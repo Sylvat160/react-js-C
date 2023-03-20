@@ -105,3 +105,6 @@ const App = () => {
 
 export default App;
 ```
+```
+<img align="right" alt="coding" width="400" src="https://github.com/Sylvat160/react-js-C/blob/main/movies.png">
+```
